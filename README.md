@@ -21,8 +21,9 @@ How to Run:
 Clone this repository to your local machine.
 Set up a MySQL database and update the database configuration in application.properties.
 Run the application using your IDE or Maven:mvn spring-boot:run
-![2024-06-15 (2)](https://github.com/Ar1222/StudentGradeTracker/assets/144251095/e96b38a6-fc28-4047-95c9-7b2790547c9c)
-![2024-06-15 (1)](https://github.com/Ar1222/StudentGradeTracker/assets/144251095/974ff524-0ac5-4e25-adc1-b3e8a786b95f)
+![pic1](https://github.com/Ar1222/StudentGradeTracker/assets/144251095/aec4d124-1d39-4766-a473-ce74b75f010c)
+![pic2](https://github.com/Ar1222/StudentGradeTracker/assets/144251095/25310f24-b898-4deb-988c-c0798f88ce77)
+
 Access the application at http://localhost:8080.
 
 
