@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Grades for Student</title>
+<style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <h1 th:text="'Grades for ' + ${student.name}"></h1>
+    <form th:action="@{/students/{studentId}/grades(studentId=${student.id})}" method="post">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+        <label for="score">Score:</label>
+        <input type="number" id="score" name="score" min="0" max="100" required>
+        <button type="submit">Add Grade</button>
+    </form>
+    <h2>Grades</h2>
+    <ul>
+        <li th:each="grade : ${grades}"> 
+            <span th:text="${grade.subject} + ': ' + ${grade.score}"></span>
+        </li>
+    </ul>
+    <h2>Average Grade: <span th:text="${average}"></span></h2>
+    <h2>Letter Grade: <span th:text="${letterGrade}"></span></h2>
+    <h2>GPA: <span th:text="${gpa}"></span></h2>
+    <a th:href="@{/students}">Back to All Students</a>
+</div>
+</body>
+</html>
